@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtlasPlate | Discover Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">♧ AtlasPlate</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#cuisines">Cuisines</a>
+            <a href="#recipes">Recipes</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <p class="eyebrow">A LITTLE TASTE OF EVERYWHERE</p>
+            <h1>Discover recipes<br><span>from around the world.</span></h1>
+            <p class="hero-text">Good food brings us together. Find something lovely to cook today.</p>
+            <form class="search-bar" id="search-form">
+                <input type="search" id="search-input" placeholder="Search pasta, curry, desserts..." aria-label="Search recipes">
+                <button type="submit">Search ↗</button>
+            </form>
+        </section>
+
+        <section class="section" id="cuisines">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">EXPLORE THE WORLD</p>
+                    <h2>Choose your mood.</h2>
+                </div>
+            </div>
+            <div class="filters">
+                <button class="filter active" data-area="all" aria-pressed="true">All recipes</button>
+                <button class="filter" data-area="Italian" aria-pressed="false">🇮🇹 Italian</button>
+                <button class="filter" data-area="Japanese" aria-pressed="false">🇯🇵 Japanese</button>
+                <button class="filter" data-area="Mexican" aria-pressed="false">🇲🇽 Mexican</button>
+                <button class="filter" data-area="Canadian" aria-pressed="false">🇨🇦 Canadian</button>
+                <button class="filter" data-area="British" aria-pressed="false">🇬🇧 British</button>
+            </div>
+        </section>
+
+        <section class="section" id="recipes">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">MADE FOR YOUR NEXT MEAL</p>
+                    <h2 id="recipe-heading">Recipes to fall for.</h2>
+                </div>
+                <button id="random-button" class="text-button">Surprise me ↗</button>
+            </div>
+            <p id="status" class="status" aria-live="polite">Finding something delicious...</p>
+            <div class="recipe-grid" id="recipe-grid"></div>
+        </section>
+
+        <section class="closing">
+            <p class="eyebrow">YOUR KITCHEN, YOUR STORY</p>
+            <h2>Good food. Slow moments.</h2>
+            <p>There is always something wonderful to make.</p>
+            <a href="#recipes" class="closing-link">Find your next recipe ↗</a>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#home" class="logo">♧ AtlasPlate</a>
+        <p>Made with ♥ for food lovers everywhere.</p>
+    </footer>
+
+    <dialog id="recipe-dialog" class="recipe-dialog">
+        <button id="close-dialog" class="close-button" aria-label="Close recipe">✕</button>
+        <div id="recipe-details"></div>
+    </dialog>
+</body>
+</html>
