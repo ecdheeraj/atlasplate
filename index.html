@@ -1,67 +1,146 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AtlasPlate | Discover Recipes</title>
+    <title>AtlasPlate | Recipes & Cocktails</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+
     <nav class="navbar">
-        <a href="#" class="logo">♧ AtlasPlate</a>
+        <a href="#home" class="logo">♧ AtlasPlate</a>
+
         <div class="nav-links">
             <a href="#home">Home</a>
-            <a href="#cuisines">Cuisines</a>
-            <a href="#recipes">Recipes</a>
+            <a href="#food">Food</a>
+            <a href="#cocktails">Cocktails</a>
         </div>
     </nav>
 
     <main>
         <section class="hero" id="home">
             <p class="eyebrow">A LITTLE TASTE OF EVERYWHERE</p>
-            <h1>Discover recipes<br><span>from around the world.</span></h1>
-            <p class="hero-text">Good food brings us together. Find something lovely to cook today.</p>
+
+            <h1>
+                Discover something<br>
+                <span>wonderful to make.</span>
+            </h1>
+
+            <p class="hero-text">
+                Explore global recipes, comforting meals, and
+                beautiful drinks for your next moment.
+            </p>
+
             <form class="search-bar" id="search-form">
-                <input type="search" id="search-input" placeholder="Search pasta, curry, desserts..." aria-label="Search recipes">
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search food or cocktails..."
+                    aria-label="Search recipes and cocktails"
+                >
                 <button type="submit">Search ↗</button>
             </form>
+
+            <p class="search-hint">Search both food and drinks.</p>
         </section>
 
-        <section class="section" id="cuisines">
+        <section class="section" id="food">
             <div class="section-heading">
                 <div>
-                    <p class="eyebrow">EXPLORE THE WORLD</p>
-                    <h2>Choose your mood.</h2>
+                    <p class="eyebrow">FROM EVERY CORNER OF THE WORLD</p>
+                    <h2>Food to fall for.</h2>
                 </div>
+
+                <button id="food-random-button" class="text-button">
+                    Surprise me ↗
+                </button>
             </div>
-            <div class="filters">
-                <button class="filter active" data-area="all" aria-pressed="true">All recipes</button>
-                <button class="filter" data-area="Italian" aria-pressed="false">🇮🇹 Italian</button>
-                <button class="filter" data-area="Japanese" aria-pressed="false">🇯🇵 Japanese</button>
-                <button class="filter" data-area="Mexican" aria-pressed="false">🇲🇽 Mexican</button>
-                <button class="filter" data-area="Canadian" aria-pressed="false">🇨🇦 Canadian</button>
-                <button class="filter" data-area="British" aria-pressed="false">🇬🇧 British</button>
+
+            <div class="filters" id="food-filters">
+                <button class="filter active" data-area="all">All food</button>
+                <button class="filter" data-area="Indian">🇮🇳 Indian</button>
+                <button class="filter" data-area="Italian">🇮🇹 Italian</button>
+                <button class="filter" data-area="Japanese">🇯🇵 Japanese</button>
+                <button class="filter" data-area="Mexican">🇲🇽 Mexican</button>
+                <button class="filter" data-area="Canadian">🇨🇦 Canadian</button>
+                <button class="filter" data-area="British">🇬🇧 British</button>
+                <button class="filter" data-area="Chinese">🇨🇳 Chinese</button>
+                <button class="filter" data-area="Thai">🇹🇭 Thai</button>
+                <button class="filter" data-area="French">🇫🇷 French</button>
+                <button class="filter" data-area="Greek">🇬🇷 Greek</button>
+                <button class="filter" data-area="American">🇺🇸 American</button>
+                <button class="filter" data-area="Turkish">🇹🇷 Turkish</button>
+                <button class="filter" data-area="Spanish">🇪🇸 Spanish</button>
+                <button class="filter" data-area="Jamaican">🇯🇲 Jamaican</button>
+                <button class="filter" data-area="Moroccan">🇲🇦 Moroccan</button>
+                <button class="filter" data-area="Vietnamese">🇻🇳 Vietnamese</button>
+            </div>
+
+            <p id="food-status" class="status" aria-live="polite">
+                Finding something delicious...
+            </p>
+
+            <div class="recipe-grid" id="food-grid"></div>
+
+            <div class="load-more-wrap">
+                <button id="food-load-more" class="load-more-button">
+                    Load more food ↓
+                </button>
             </div>
         </section>
 
-        <section class="section" id="recipes">
+        <section class="section cocktail-section" id="cocktails">
             <div class="section-heading">
                 <div>
-                    <p class="eyebrow">MADE FOR YOUR NEXT MEAL</p>
-                    <h2 id="recipe-heading">Recipes to fall for.</h2>
+                    <p class="eyebrow">SHAKEN, STIRRED, AND SERVED</p>
+                    <h2>Cocktails & mocktails.</h2>
                 </div>
-                <button id="random-button" class="text-button">Surprise me ↗</button>
+
+                <button id="cocktail-random-button" class="text-button">
+                    Surprise me ↗
+                </button>
             </div>
-            <p id="status" class="status" aria-live="polite">Finding something delicious...</p>
-            <div class="recipe-grid" id="recipe-grid"></div>
+
+            <p class="section-intro">
+                Explore drink recipes, including alcohol-free options.
+            </p>
+
+            <div class="filters" id="cocktail-filters">
+                <button class="filter active" data-drink="all">All drinks</button>
+                <button class="filter" data-drink="Alcoholic">Cocktails</button>
+                <button class="filter" data-drink="Non_Alcoholic">
+                    Alcohol-free drinks
+                </button>
+            </div>
+
+            <p id="cocktail-status" class="status" aria-live="polite">
+                Finding drink recipes...
+            </p>
+
+            <div class="recipe-grid" id="cocktail-grid"></div>
+
+            <div class="load-more-wrap">
+                <button id="cocktail-load-more" class="load-more-button">
+                    Load more drinks ↓
+                </button>
+            </div>
         </section>
 
         <section class="closing">
             <p class="eyebrow">YOUR KITCHEN, YOUR STORY</p>
             <h2>Good food. Slow moments.</h2>
             <p>There is always something wonderful to make.</p>
-            <a href="#recipes" class="closing-link">Find your next recipe ↗</a>
+            <a href="#food" class="closing-link">
+                Find your next recipe ↗
+            </a>
         </section>
     </main>
 
@@ -71,8 +150,12 @@
     </footer>
 
     <dialog id="recipe-dialog" class="recipe-dialog">
-        <button id="close-dialog" class="close-button" aria-label="Close recipe">✕</button>
+        <button id="close-dialog" class="close-button" aria-label="Close recipe">
+            ✕
+        </button>
         <div id="recipe-details"></div>
     </dialog>
+
 </body>
 </html>
+
